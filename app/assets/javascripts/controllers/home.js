@@ -9,7 +9,7 @@ angular.module('limitedBandwith')
 
         (function (cntr) { // need function closure here to pass in i
 
-          $http.get('api_call.json?t=60').success(function (data, i) { // call api that does some work (i.e., sleeps for a bit)
+          $http.get('api_call.json?t=15').success(function (data, i) { // call api that does some work (i.e., sleeps for a bit)
             $scope.apicalls[cntr].result = data;
           });
         })(i);
