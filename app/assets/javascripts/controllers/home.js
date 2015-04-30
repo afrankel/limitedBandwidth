@@ -1,5 +1,5 @@
 angular.module('limitedBandwith')
-    .controller('HomeCtrl', function ($scope, $http) {
+    .controller('HomeCtrl', ['$scope', '$http', function($scope, $http) {
 
       $scope.apicalls = []; // storage for my api call results
 
@@ -14,4 +14,4 @@ angular.module('limitedBandwith')
           });
         })(i);
       }
-    });
+    }]);
