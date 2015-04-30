@@ -2,7 +2,7 @@ angular
     .module('limitedBandwith', [
         'ui.router',
         'templates'
-    ]).config(function ($stateProvider, $urlRouterProvider) {
+    ]).config(['$stateProvider','$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
       $stateProvider.state('home', {
         url: '/',
         templateUrl : 'home.html',
@@ -11,4 +11,4 @@ angular
       // default fall back route
       $urlRouterProvider.otherwise('/');
       //$locationProvider.html5Mode(true);
-    });
+    }]);
