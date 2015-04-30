@@ -42,3 +42,7 @@ gem 'spring',        group: :development
 
 gem 'bower-rails'
 gem 'angular-rails-templates'
+
+# next two needed for Heroku deployment
+gem 'rails_serve_static_assets'
+gem 'rails_stdout_logging'
