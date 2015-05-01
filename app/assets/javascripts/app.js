@@ -16,8 +16,10 @@ angular
       'responseError': function(response) {
         if (response.status === 0) { // this is a timeout or connection lost
           // should retry
-          var $http = $injector.get('$http');
-          return $http(response.config);
+          return setTimeout(function(){ // retry after 1 second
+            var $http = $injector.get('$http');
+            return $http(response.config);
+          }, 1000);
         }
         // give up - some other error
         return $q.reject(response);
