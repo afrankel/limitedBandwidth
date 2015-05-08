@@ -1,28 +1,22 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A test application to test a web app in a limited bandwith situation. I am assuming multiple JSON API calls from the AngularJS client to a Rails server.
 
-Things you may want to cover:
+Testing using Chrome developer tools to stop the internet connection while pulling data (i.e., server sleeps) to show that re-establishing the connection will cause the APIs to restart.
 
-* Ruby version
+Includes:
 
-* System dependencies
+* Ruby 2
 
-* Configuration
+* Rails 4
 
-* Database creation
+* Angular 1.x
 
-* Database initialization
+* Postgres (although no database tables involved at this point)
 
-* How to run the test suite
+Install:
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
+* clone then bundle install
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
