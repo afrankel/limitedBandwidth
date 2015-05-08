@@ -18,5 +18,9 @@ Install:
 
 * clone then bundle install
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* start server (using puma) rails s Puma
+
+* go to: localhost:3000  to see 10 API calls in process (several in parallel due to multi-process of Puma)
+
+
+
