@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: limitedBandwith
+  database: limitedBandwidth
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -79,6 +79,6 @@ development:
 #     url: <%= ENV['DATABASE_URL'] %>
 production:
   <<: *default
-  database: limitedBandwith
+  database: limitedBandwidth
 #  username: angular_rails_2
 #  password: <%= ENV['ANGULAR_RAILS_2_DATABASE_PASSWORD'] %>

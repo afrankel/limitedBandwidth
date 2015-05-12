@@ -1,4 +1,4 @@
-angular.module('limitedBandwith')
+angular.module('limitedBandwidth')
     .controller('HomeCtrl', ['$scope', '$http', function ($scope, $http) {
 
   $scope.apicalls = []; // storage for my api call results

@@ -1,5 +1,5 @@
 angular
-    .module('limitedBandwith', [
+    .module('limitedBandwidth', [
   'ui.router',
   'templates'
 ]).config(['$stateProvider', '$urlRouterProvider', '$httpProvider', function ($stateProvider, $urlRouterProvider, $httpProvider) {
