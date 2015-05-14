@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   def api_call
     t = params[:t] || 60
 
-    sleep(t.to_i)
+    Response.sleep(t.to_i) # database sleep
     render :json => "Completed".to_json
   end
 
@@ -29,7 +29,7 @@ class ApplicationController < ActionController::Base
     end
 
     if not_found_in_db
-      sleep(t.to_i)
+      Response.sleep(t.to_i) # database sleep
 
       # first save off the results before returning in case the client connection is lost
       # use the combination of the sessionID + ":" + api_id
