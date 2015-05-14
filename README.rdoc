@@ -4,6 +4,12 @@ A test application to test a web app in a limited bandwith situation. I am assum
 
 Testing using Chrome developer tools to stop the internet connection while pulling data (i.e., server sleeps) to show that re-establishing the connection will cause the APIs to restart.
 
+Option 1: simple retry API from Angular (using interceptor)
+
+Option 2: same as #1 except server is storing result in the database with an id and retry pulls from database - benefit is that long running server processes aren't restarted (and updates are possible)
+
+Both options are available from the UI.
+
 Includes:
 
 * Ruby 2
@@ -12,12 +18,18 @@ Includes:
 
 * Angular 1.x
 
-* Postgres (although no database tables involved at this point)
+* Postgres (option 2 uses the database)
 
 Install:
 
 * clone then bundle install
 
-* start server (using puma) rails s Puma
+* rake db:create
 
-* go to: localhost:3000  to see 10 API calls in process (several in parallel due to multi-process of Puma)
+* rake db:migrate
+
+* start server (using unicorn) unicorn -c config/unicorn.rb
+
+* go to: 127.0.0.1:3000 (note: do not use localhost since you need to throttle connection) to see 10 API calls in process (several in parallel due to multi-process of unicorn)
+
+* use Chrome dev tools to turn off connection and restore connection to see results
