@@ -3,13 +3,19 @@ angular
   'ui.router',
   'templates'
 ]).config(['$stateProvider', '$urlRouterProvider', '$httpProvider', function ($stateProvider, $urlRouterProvider, $httpProvider) {
-  $stateProvider.state('home', {
-    url:'/',
-    templateUrl:'home.html',
-    controller:'HomeCtrl'
+  $stateProvider.state('option1', {
+    url:'/option1',
+    templateUrl:'option1.html',
+    controller:'Option1Ctrl'
+  }).
+  state('option2', {
+    url:'/option2',
+    templateUrl:'option2.html',
+    controller:'Option2Ctrl'
   });
+
   // default fall back route
-  $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/option1');
   //$locationProvider.html5Mode(true);
   var interceptor = ['$injector', '$q', function ($injector, $q) {
     return {

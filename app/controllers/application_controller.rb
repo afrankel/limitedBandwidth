@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
 
     if retry_it
       # get from db based on id
-      client_response = Response.find_by_api_id(id)
+      client_response = Response.find_by_api_id("#{session.id}:#{id}")
       if client_response
         not_found_in_db = false # since we found it just return the original result
         render :json => client_response.result
@@ -32,9 +32,11 @@ class ApplicationController < ActionController::Base
       sleep(t.to_i)
 
       # first save off the results before returning in case the client connection is lost
-      Response.save_result(id, "Completed. API id: #{id}".to_json)
+      # use the combination of the sessionID + ":" + api_id
+      # in real world case we would just return the same result
+      Response.save_result("#{session.id}:#{id}", "Completed. Result retrieved from database. API id: #{id}".to_json)
 
-      render :json => "Completed".to_json
+      render :json => "Completed by server".to_json
     end
   end
 end
