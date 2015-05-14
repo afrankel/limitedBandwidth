@@ -2,7 +2,9 @@ Rails.application.routes.draw do
 
   root 'application#index'
   #get '*path' => 'application#index'
+
   get 'api_call' => 'application#api_call'
+  get 'api_call_with_id' => 'application#api_call_with_id'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
