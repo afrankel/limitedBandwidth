@@ -4,6 +4,8 @@ A test application to test a web app in a limited bandwith situation. I am assum
 
 Testing using Chrome developer tools to stop the internet connection while pulling data (i.e., server sleeps) to show that re-establishing the connection will cause the APIs to restart.
 
+Presentation associated with project: https://prezi.com/8kvhmyh3kzlk/limited-bandwidth-applications/
+
 Option 1: simple retry API from Angular (using interceptor)
 
 Option 2: same as #1 except server is storing result in the database with an id and retry pulls from database - benefit is that long running server processes aren't restarted (and updates are possible)
